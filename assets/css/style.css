@@ -13,7 +13,25 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
 }
+.btnn{
+  padding: 11px;
+padding-inline-start: 11px;
 
+background-color: #149ddd;
+color: white;
+font-family:  "Raleway", sans-serif;
+        
+}
+.btnn:hover{
+  background-color: #79c4e7;
+  transition: all 0.9s;
+  color: white
+  
+}
+.bx-download{
+  
+  margin-right: 2px;
+}
 a {
   color: #149ddd;
   text-decoration: none;
@@ -140,7 +158,15 @@ h6 {
     margin-left: 0;
   }
 }
+@media (min-width: 1199px) {
+  #header {
+    left: -300px;
+  }
 
+  #main {
+    margin-left: 0;
+  }
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -227,10 +253,18 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+/* Note: 'object-fit' is not a valid property for background images, so you can remove it */
+}
+#hero-bg{
   width: 100%;
+  overflow: hidden;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
-  background-size: cover;
+  background: url("../img/hero-bg.jpeg") top center;
+  background-size:contain; /* This will make the image cover the entire viewport */
+  background-color: #000000;
+  background-repeat: no-repeat;
+  object-fit: contain; 
+
 }
 
 #hero:before {
@@ -372,7 +406,7 @@ section {
   width: 140px;
   height: 42px;
   border-spacing: inherit;
-  border: 5px blue solid;
+
 }
 
 /*--------------------------------------------------------------
@@ -919,6 +953,14 @@ section {
 }
 
 @media (max-width: 1199px) {
+  #footer {
+    position: static;
+    width: auto;
+    padding-right: 20px 15px;
+  }
+}
+
+@media (min-width: 768px) {
   #footer {
     position: static;
     width: auto;
