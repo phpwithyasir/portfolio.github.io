@@ -124,10 +124,10 @@
               </div>
               <div class="col-lg-6">
                 <ul class="fst-italic">
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>17</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>19</span></li>
 
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                    <span>yasir2203e@aptechorangi.com</span></li>
+                    <span>yasircode09@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
 
                 </ul>
@@ -273,6 +273,17 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/Screenshot 2024-11-20 215637.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/Screenshot 2024-11-20 215637.png" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="snakegame.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
@@ -315,6 +326,16 @@
                 <a href="assets/img/portfolio/2023-03-28.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="Card 3"><i class="bx bx-plus"></i></a>
                 <a href="lara.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/Screenshot 2024-11-20 213804.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/Screenshot 2024-11-20 213804.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="kmbs.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -370,8 +391,9 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>2023</span></strong>
+        &copy; Copyright <strong><span id="current_year"></span></strong>
       </div>
+ 
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
@@ -398,7 +420,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    document.getElementById('current_year').textContent = new Date().getFullYear();
+</script>
 </body>
 
 </html>
