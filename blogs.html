@@ -28,55 +28,44 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <style>
-    .code-area {
-      background: #282c34;
-      color: #f8f9fa;
-      padding: 10px;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin-top: 20px;
-    }
-    .container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .breadcrumbs {
-        background: #e9ecef;
-        padding: 15px 10px;
-      }
-      .breadcrumbs h2 {
-        margin: 0;
-      }
-      .inner-page .container {
-        margin-top: 20px;
-      }
-      .section-content {
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-      }
-      .section-content img {
-        width: 100%;
-        border-radius: 8px;
-        margin-top: 15px;
-      } 
-      .code-area {
-        background: #282c34;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 8px;
-        overflow-x: hidden;
-        margin-top: 15px;
-        font-family: monospace;
-      }
+.blog-thumbnail {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.code-area {
+  background: #1e1e1e;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  position: relative;
+  min-height: 100px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+
   </style>
   </head>
   <body>
     <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <i class="bi bi-list mobile-nav-toggle "></i>
  
 
    
@@ -108,170 +97,38 @@
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
-  <main id="main">
-  <!-- ======= Breadcrumbs ======= -->
-  <section class="breadcrumbs">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2>Blogs</h2>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Blogs</li>
-        </ol>
+<!-- Modern Blogs Section -->
+<main class="inner-page">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Blog Card -->
+    <!-- Blog Card -->
+<div class="col-md-6 col-lg-4">
+  <div class="card blog-card h-100 shadow-sm">
+    <img src="assets/img/scanner.png" class="card-img-top blog-thumbnail" alt="Barcode Scanner">
+    <div class="card-body">
+      <h5 class="card-title">Barcode Scanner</h5>
+      <p class="card-text">This is a guide regarding barcode scanning functionalities using the ZXing library.</p>
+      <a href="https://unpkg.com/@zxing/library@latest/umd/index.min.js" target="_blank" class="btn btn-link px-0">Get the ZXing library</a>
+      <div class="code-area mt-3 position-relative">
+        <button class="btn btn-sm text-white copy-btn" data-target="code1">📋 Copy</button>
+       <br>
+        <pre id="code1" class="small m-0"><code>&lt;script src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+const codeReader = new ZXing.BrowserMultiFormatReader();
+// ...
+&lt;/script&gt;</code></pre>
       </div>
     </div>
-  </section>
-  <!-- ======= Blogs Section ======= -->
-  <main class="inner-page">
-    <div class="container">
-      <!-- Blog 1 -->
-      <!-- <div class="section-content">
-        <h2>SharePoint Connectivity</h2>
-        <p>This is the complete guide regarding SharePoint data read/upload/list.</p>
-        <img src="assets/img/sharepoint.jpg" alt="SharePoint Connectivity" />
-        <div class="code-area">
-          <pre>
-&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;Welcome to the blog!&lt;/p&gt;
-          </pre>
-        </div>
-      </div> -->
-      <!-- Blog 2 -->
-      <!-- <div class="section-content">
-        <h2>DropBox Connectivity</h2>
-        <p>This is the complete guide regarding Dropbox data read/upload/list.</p>
-        <img src="assets/img/dropbox.png" alt="DropBox Connectivity" />
-        <div class="code-area">
-          <pre>
-&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;Welcome to the blog!&lt;/p&gt;
-          </pre>
-        </div>
-      </div> -->
-      <!-- Blog 3 -->
-      <div class="section-content">
-        <h2>Barcode Scanner</h2>
-        <p>This is the complete guide regarding barcode scanning functionalities.</p>
-        <img src="assets/img/scanner.png" alt="Barcode Scanner" />
-       <h1>Description:</h1>
-           first u have to get the library cdn or dowload it locally in your project for this operation.
-          Library Name ZXing you can easily get it by this link 
-            <a href="https://unpkg.com/@zxing/library@latest/umd/index.min.js" target="_blank">Zxing.js</a>
-            after get the library now here is the simple example of scanner how implement it. 
-            <div class="code-area">
-            <div class="code-container">
-              <button id="copyButton" class="btn btn-primary btn-sm" style="float: right; margin-bottom: 10px;">Copy Code</button>
-              <pre id="codeBlock" style="width: 100%">
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
+  </div>
+</div>
 
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-  &lt;meta name="author" content="ZXing for JS"&gt;
+      <!-- You can copy/paste the above "col-md-6" block to add more blogs -->
 
-  &lt;title&gt;ZXing TypeScript | Decoding from camera stream&lt;/title&gt;
-
-  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"&gt;
-  &lt;link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css"&gt;
-  &lt;link rel="stylesheet" href="https://unpkg.com/milligram@1.3.0/dist/milligram.min.css"&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;main class="wrapper" style="padding-top:2em"&gt;
-
-&lt;div&gt;
-&lt;a class="button" id="startButton"&gt;Start&lt;/a&gt;
-&lt;a class="button" id="resetButton"&gt;Reset&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;video id="video" width="300" height="200" style="border: 1px solid gray"&gt;&lt;/video&gt;
-&lt;/div&gt;
-
-&lt;div id="sourceSelectPanel" style="display:none"&gt;
-&lt;label for="sourceSelect"&gt;Change video source:&lt;/label&gt;
-&lt;select id="sourceSelect" style="max-width:400px"&gt;
-&lt;/select&gt;
-&lt;/div&gt;
-
-&lt;label&gt;Result:&lt;/label&gt;
-&lt;pre&gt;&lt;code id="result"&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-
-&lt;footer class="footer"&gt;
-&lt;section class="container"&gt;
-&lt;p&gt;ZXing TypeScript Demo. Licensed under the &lt;a target="_blank"
-  href="https://github.com/zxing-js/library#license"&gt;MIT&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;
-&lt;/footer&gt;
-
-&lt;/main&gt;
-
-&lt;script type="text/javascript" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-window.addEventListener('load', function () {
-let selectedDeviceId;
-const codeReader = new ZXing.BrowserMultiFormatReader()
-console.log('ZXing code reader initialized')
-codeReader.listVideoInputDevices()
-.then((videoInputDevices) => {
-const sourceSelect = document.getElementById('sourceSelect')
-selectedDeviceId = videoInputDevices[0].deviceId
-if (videoInputDevices.length >= 1) {
-  videoInputDevices.forEach((element) => {
-    const sourceOption = document.createElement('option')
-    sourceOption.text = element.label
-    sourceOption.value = element.deviceId
-    sourceSelect.appendChild(sourceOption)
-  })
-
-  sourceSelect.onchange = () => {
-    selectedDeviceId = sourceSelect.value;
-  };
-
-  const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-  sourceSelectPanel.style.display = 'block'
-}
-
-document.getElementById('startButton').addEventListener('click', () => {
-  codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
-    if (result) {
-      console.log(result)
-      document.getElementById('result').textContent = result.text
-    }
-    if (err && !(err instanceof ZXing.NotFoundException)) {
-      console.error(err)
-      document.getElementById('result').textContent = err
-    }
-  })
-  console.log(`Started continuous decode from camera with id ${selectedDeviceId}`)
-})
-
-document.getElementById('resetButton').addEventListener('click', () => {
-  codeReader.reset()
-  document.getElementById('result').textContent = '';
-  console.log('Reset.')
-})
-
-        })
-        .catch((err) => {
-          console.error(err)
-        })
-    })
-  &lt;/script&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-              </pre>
-            </div>
-            </div>
-      </div>
     </div>
-
-  </main><!-- End #main -->
+  </div>
+</main>
 
   
   <!-- Vendor JS Files -->
@@ -288,18 +145,22 @@ document.getElementById('resetButton').addEventListener('click', () => {
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    // document.getElementById('current_year').textContent = new Date().getFullYear();
-   //copy to clip board 
-   document.getElementById('copyButton').addEventListener('click', function () {
-    const codeBlock = document.getElementById('codeBlock').textContent;
-    navigator.clipboard.writeText(codeBlock).then(() => {
-      alert('Code copied to clipboard!');
-    }).catch(err => {
-      console.error('Failed to copy code:', err);
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const code = document.getElementById(targetId).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.textContent = "✅ Copied";
+        setTimeout(() => {
+          button.textContent = "📋 Copy";
+        }, 1500);
+      });
     });
   });
-
 </script>
+
+
+
   </body>
 </html>
 

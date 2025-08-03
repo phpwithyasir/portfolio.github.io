@@ -256,14 +256,12 @@ h6 {
 /* Note: 'object-fit' is not a valid property for background images, so you can remove it */
 }
 #hero-bg{
-  width: 100%;
   overflow: hidden;
   height: 100vh;
   background: url("../img/hero-bg.jpeg") top center;
-  background-size:contain; /* This will make the image cover the entire viewport */
+  background-size:cover; /* This will make the image cover the entire viewport */
   background-color: #000000;
-  background-repeat: no-repeat;
-  object-fit: contain; 
+
 
 }
 
