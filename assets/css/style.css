@@ -258,10 +258,10 @@ h6 {
 #hero-bg{
   overflow: hidden;
   height: 100vh;
-  background: url("../img/hero-bg.jpeg") top center;
+    background: url("../img/img.jpg") top center;
+
   background-size:cover; /* This will make the image cover the entire viewport */
   background-color: #000000;
-
 
 }
 
@@ -305,8 +305,10 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
+   #hero-bg {
+  background: url("../img/my.jpg") top center;
+    background-size: cover;
+    /* background-color: #000000; optional, keeps fallback */
   }
 }
 
